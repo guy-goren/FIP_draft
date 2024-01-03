@@ -1,17 +1,11 @@
 ---
-fip: "<to be assigned>" <!--keep the qoutes around the fip number, i.e: `fip: "0001"`-->
-title: <FIP title>
-author: <a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s), e.g. (use with the parentheses or triangular brackets): FirstName LastName (@GitHubUsername), FirstName LastName <foo@bar.com>, FirstName (@GitHubUsername) and GitHubUsername (@GitHubUsername)>
-discussions-to: <URL>
+fip: "to be assigned" <!--keep the qoutes around the fip number, i.e: `fip: "0001"`-->
+title: EC finality calculator
+author: "Guy Goren (@guy-goren), Jorge Soares <foo@bar.com>"
+discussions-to: foo.com
 status: Draft
-type: <Technical (Core, Networking, Interface, Informational)  | Organizational | Recovery | FRC>
-category (*only required for Standard Track): <Core | Networking | Interface >
-created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-spec-sections: 
-  - <section-id>
-  - <section-id>
-requires (*optional): <FIP number(s)>
-replaces (*optional): <FIP number(s)>
+type: "Technical (Informational) | FRC"
+created: 2024-01-03
 ---
 
 <!--You can leave these HTML comments in your merged FIP and delete the visible duplicate text guides, they will not appear and may be helpful to refer to if you edit it again. This is the suggested template for new FIPs. Note that a FIP number will be assigned by an editor. When opening a pull request to submit your FIP, please use an abbreviated title in the filename, `fip-draft_title_abbrev.md`. The title should be 44 characters or less.-->
@@ -21,17 +15,17 @@ Note that a FIP number will be assigned by an editor. When opening a pull reques
 
 The title should be 44 characters or less.
 
-# Title
+# A Finality Calculator for Filecoin
 
 ## Simple Summary
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the FIP.-->
-"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the FIP.
+Instead of counting the number of epochs alone in order to measure the finality, we propose to also consider what has happened during those epochs whenever the information is available. For example, contemplate case A and case B. In case A, for the last 50 epochs the chain grew by 5 blocks per epoch on average, in line with expectation. In case B, on the other hand, for the last 50 epochs the chain grew by a mere 2 blocks per epoch. Clearly, the probability of a chain reconfiguration longer than 50 epochs is much smaller in case A than in case B.
 
 ## Abstract
 <!--A short (~200 word) description of the technical issue being addressed.-->
-A short (~200 word) description of the technical issue being addressed.
+We embark on an analysis of Filecoin's Finality, i.e., the probabilistic guarantees that a given tipset will always be in the canonical chain. The analysis involves distributed computing and stochastic arguments and provides upper bounds for the error probabilities, i.e., the probability that a reorg would overide a given tipset. We do so by using a dynamic evaluation which takes into account the specific obserevd history of the chain. Unlike a static analysis that considers the worst case conditions, we consider the worst case conditions in the (unknown) future but do not consider the worst case past. Instead, we use the obsereved chain to reason about the (known) past. The result is an algorithm that, given a specific chain history. provides an upper bound on the error probabilities. As an example, currently several key applications of Filecoin use a 900 epochs settelment period to provide a (hand wavey) finality guarantee of $2^{-30}$. Our analysis shows that in many cases upper bounding the error probability on $2^{-30}$ is achieved in 25~35 epochs -- a x30 improvement.
 
-## Change Motivation
+## TBC... Change Motivation
 <!--The motivation is critical for FIPs that want to change the Filecoin protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the FIP solves. FIP submissions without sufficient motivation may be rejected outright.-->
 The motivation is critical for FIPs that want to change the Filecoin protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the FIP solves. FIP submissions without sufficient motivation may be rejected outright.
 
