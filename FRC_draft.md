@@ -25,11 +25,17 @@ Instead of counting the number of epochs alone in order to measure the finality,
 <!--A short (~200 word) description of the technical issue being addressed.-->
 We embark on an analysis of Filecoin's Finality, i.e., the probabilistic guarantees that a given tipset will always be in the canonical chain. The analysis involves distributed computing and stochastic arguments and provides upper bounds for the error probabilities, i.e., the probability that a reorg would overide a given tipset. We do so by using a dynamic evaluation which takes into account the specific obserevd history of the chain. Unlike a static analysis that considers the worst case conditions, we consider the worst case conditions in the (unknown) future but do not consider the worst case past. Instead, we use the obsereved chain to reason about the (known) past. The result is an algorithm that, given a specific chain history. provides an upper bound on the error probabilities. As an example, currently several key applications of Filecoin use a 900 epochs settelment period to provide a (hand wavey) finality guarantee of $2^{-30}$. Our analysis shows that in many cases upper bounding the error probability on $2^{-30}$ is achieved in 25~35 epochs -- a x30 improvement.
 
-## TBC... Change Motivation
+## Change Motivation
 <!--The motivation is critical for FIPs that want to change the Filecoin protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the FIP solves. FIP submissions without sufficient motivation may be rejected outright.-->
-The motivation is critical for FIPs that want to change the Filecoin protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the FIP solves. FIP submissions without sufficient motivation may be rejected outright.
+The motivation is two fold: 1) Providing theoretical guarantees for Filecoin that are based clear reasoning. 2) Reduce the delay times of using Filecoin.  We remark that the F3 finality gadjet will also adrress both of this points (with even faster finality times). However, this work provides several benefits in comparison to F3.
+1. It requires no cahnge to lotus or any other code, and therefore no agreement process is needed. Instead, it is a simple algorithm that any node can run orthogonaly to the "mining process". The algorithm takes as input the obsereved history of from the node and outputs a measure of safety.
+2. It does not change the incentive considerations of Filecoin, which remains a longest chain blockchain similarly to BTC and ETH. This is since no extra work is mandatory, the algorithm's execution (or no execution) does not affect the safety of Filecoin; it only provides a measure.
+3. It is an algorithm and not a protocol. That is, the execution is local and the result does not depend on other nodes execution the algorithm as well.
+4. It is infinitly scalable. It requires no additional communication what-so-ever.
 
-## Specification
+Notablly, bullet (1) implies that our proposal can be used as an interim solution for Filecoin until F3 is deployed.
+
+## TBC... Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Filecoin implementations. -->
 The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Filecoin implementations.
 
