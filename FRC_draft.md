@@ -41,7 +41,20 @@ The analysis detailing how we bound the finality of a given input can be found [
 
 ## TODO Design Rationale
 <!--The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.-->
-The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
+The reasoning behind the upper bound of the error probabilities is based on:
+* An assumption that a block $B_h$ that is produced by an honest miner (aka validator/SP) at epoch $r$ is visible to all other honest miners by the start of epoch $r+1$, and consequently, the branch that $B_h$ is building upon is also visible to the other miners by epoch $r+1$. This assumption is slightly weaker than the synchrony assumption typically used in Filecoin.
+* Considering the adversarial possibilities according to different eras and assigning specific random variables to handle each era:
+  1. Distant past -- adversarial lead building. Denoted $L_f$.
+  2. Recent past -- competing chain construction building. Denoted $B_f$.
+  3. Future -- adversarial overtaking if needed. Denoted $M_f$.
+  Each era has different charectaristics that need to be addressed. After which the results are combined to get an upper bound on the probability of error. The images belew illustrate the different eras.
+
+![Lf](images/Lf.png "Lf")
+
+![Bf](images/Bf.png "Bf")
+
+![Mf](images/Mf.png "Mf")
+
 
 ## Backwards Compatibility
 <!--All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
