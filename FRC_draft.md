@@ -39,7 +39,7 @@ Notablly, bullet (1) implies that our proposal can be used as an interim solutio
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Filecoin implementations. -->
 The analysis detailing how we bound the finality of a given input can be found [here](https://docs.google.com/document/d/1QpIpOLaabvieTrbgXzOSg3p1Z5SbNInGNqzBNFrCgXQ/edit#heading=h.c5olklehxrdn).
 
-## TODO Design Rationale
+## Design Rationale
 <!--The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.-->
 The reasoning behind the upper bound of the error probabilities is based on:
 * An assumption that a block $B_h$ that is produced by an honest miner (aka validator/SP) at epoch $r$ is visible to all other honest miners by the start of epoch $r+1$, and consequently, the branch that $B_h$ is building upon is also visible to the other miners by epoch $r+1$. This assumption is slightly weaker than the synchrony assumption typically used in Filecoin.
@@ -56,7 +56,7 @@ The reasoning behind the upper bound of the error probabilities is based on:
 ![Mf](images/Mf.png "Mf")
 
 
-## Backwards Compatibility
+## TODO Backwards Compatibility
 <!--All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
 All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
 
