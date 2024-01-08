@@ -56,14 +56,18 @@ The reasoning behind the upper bound of the error probabilities is based on:
 ![Mf](images/Mf.png "Mf")
 
 
-## TODO Backwards Compatibility
+## Backwards Compatibility
 <!--All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
 No backward compatibility issues since what we suggest is pure analysis with no change to the existing Consensus mechanism. The analysis does rely on the Consistent Broadcast fix that was added after [FIPxxx](add link)
 
 
-## Test Cases
+## TODO Test Cases
 <!--Test cases for an implementation are mandatory for FIPs that are affecting consensus changes. Other FIPs can choose to include links to test cases if applicable.-->
-Test cases for an implementation are mandatory for FIPs that are affecting consensus changes. Other FIPs can choose to include links to test cases if applicable.
+We have run our analysis algorithm on past data from Filecoin. The periods analyzed are heights 3,356,200 to 3,356,700 which represent a typical healthy state, and heights 2,764,600 to 2,766,000 which was a less healthy period for Filecoin. The figures below show the results of quantifying the finality of tipsets after 30 epochs delay. (We note that one may choose other questions to analyze, such as, when does a specific tipset reach a given finality threshold?)
+
+![Lf](images/Lf.png "Lf")
+
+![Bf](images/Bf.png "Bf")
 
 ## Security Considerations
 <!--All FIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. FIP submissions missing the "Security Considerations" section will be rejected. A FIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.-->
