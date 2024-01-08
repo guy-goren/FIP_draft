@@ -65,9 +65,9 @@ No backward compatibility issues since what we suggest is pure analysis with no 
 <!--Test cases for an implementation are mandatory for FIPs that are affecting consensus changes. Other FIPs can choose to include links to test cases if applicable.-->
 We have run our analysis algorithm on past data from Filecoin. The periods analyzed are heights 3,356,200 to 3,356,700 which represent a typical healthy state, and heights 2,764,600 to 2,766,000 which was a less healthy period for Filecoin. The figures below show the results of quantifying the finality of tipsets after 30 epochs delay. (We note that one may choose other questions to analyze, such as, when does a specific tipset reach a given finality threshold?)
 
-![Lf](images/Lf.png "Lf")
+![Good times](images/err_prob_and_block_count_on_good_times.png "Good times")
 
-![Bf](images/Bf.png "Bf")
+![Bad times](images/err_prob_and_block_count_on_bad_times.png "Bad times")
 
 ## Security Considerations
 <!--All FIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. FIP submissions missing the "Security Considerations" section will be rejected. A FIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.-->
