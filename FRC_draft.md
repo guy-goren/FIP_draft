@@ -61,7 +61,7 @@ The reasoning behind the upper bound of the error probabilities is based on:
 No backward compatibility issues since what we suggest is pure analysis with no change to the existing Consensus mechanism. The analysis does rely on the Consistent Broadcast fix that was added after [FIPxxx](add link)
 
 
-## TODO Test Cases
+## Test Cases
 <!--Test cases for an implementation are mandatory for FIPs that are affecting consensus changes. Other FIPs can choose to include links to test cases if applicable.-->
 We have run our analysis algorithm on past data from Filecoin. The periods analyzed are heights 3,356,200 to 3,356,700 which represent a typical healthy state, and heights 2,764,600 to 2,766,000 which was a less healthy period for Filecoin. The figures below show the results of quantifying the finality of tipsets after 30 epochs delay. (We note that one may choose other questions to analyze, such as, when does a specific tipset reach a given finality threshold?) The potential adverserial power we considered is 30%.
 
@@ -72,15 +72,15 @@ The figure below shows the results of applying the analysis on a typical healthy
 The figure below shows the results of applying the analysis on a period when the Filecoin blockchain was less healthy (around the end of March 2023). Notably the tipset are less than full on average --- often falling to below 4 blocks per tipset on a 30 epochs' average. The plots and axis are analogous to before. Evidently, the finality measurement is worse than in the typical "ggod case". That is the error probabilities are higher in orders of magnitude in many cases.
 ![Bad times](images/err_prob_and_block_count_on_bad_times.png "Bad times")
 
-## Security Considerations
+## TODO Security Considerations
 <!--All FIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. FIP submissions missing the "Security Considerations" section will be rejected. A FIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.-->
 All FIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. FIP submissions missing the "Security Considerations" section will be rejected. A FIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 
-## Incentive Considerations
+## TODO Incentive Considerations
 <!--All FIPs must contain a section that discusses the incentive implications/considerations relative to the proposed change. Include information that might be important for incentive discussion. A discussion on how the proposed change will incentivize reliable and useful storage is required. FIP submissions missing the "Incentive Considerations" section will be rejected. An FIP cannot proceed to status "Final" without a Incentive Considerations discussion deemed sufficient by the reviewers.-->
 All FIPs must contain a section that discusses the incentive implications/considerations relative to the proposed change. Include information that might be important for incentive discussion. A discussion on how the proposed change will incentivize reliable and useful storage is required. FIP submissions missing the "Incentive Considerations" section will be rejected. An FIP cannot proceed to status "Final" without a Incentive Considerations discussion deemed sufficient by the reviewers.
 
-## Product Considerations
+## TODO Product Considerations
 <!--All FIPs must contain a section that discusses the product implications/considerations relative to the proposed change. Include information that might be important for product discussion. A discussion on how the proposed change will enable better storage-related goods and services to be developed on Filecoin. FIP submissions missing the "Product Considerations" section will be rejected. An FIP cannot proceed to status "Final" without a Product Considerations discussion deemed sufficient by the reviewers.-->
 All FIPs must contain a section that discusses the product implications/considerations relative to the proposed change. Include information that might be important for product discussion. A discussion on how the proposed change will enable better storage-related goods and services to be developed on Filecoin. FIP submissions missing the "Product Considerations" section will be rejected. An FIP cannot proceed to status "Final" without a Product Considerations discussion deemed sufficient by the reviewers.
 
