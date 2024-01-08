@@ -58,7 +58,8 @@ The reasoning behind the upper bound of the error probabilities is based on:
 
 ## TODO Backwards Compatibility
 <!--All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
-All FIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The FIP must explain how the author proposes to deal with these incompatibilities. FIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+No backward compatibility issues since what we suggest is pure analysis with no change to the existing Consensus mechanism. The analysis does rely on the Consistent Broadcast fix that was added after [FIPxxx](add link)
+
 
 ## Test Cases
 <!--Test cases for an implementation are mandatory for FIPs that are affecting consensus changes. Other FIPs can choose to include links to test cases if applicable.-->
